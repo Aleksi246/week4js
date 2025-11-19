@@ -1,14 +1,10 @@
+import { Link } from "react-router";
+
 const MediaRow = (props) => {
-  const { item, setSelectedItem } = props;
+  const { item } = props;
   return (
     // TODO: move <tr> element in foreach from Home.jsx here
-    <tr
-      key={item.media_id}
-      onClick={() => {
-        setSelectedItem(item);
-        console.log("works");
-      }}
-    >
+    <tr key={item.media_id}>
       <td>
         <img src={item.thumbnail} alt={item.title} />
       </td>
@@ -17,6 +13,11 @@ const MediaRow = (props) => {
       <td>{new Date(item.created_at).toLocaleString("fi-FI")}</td>
       <td>{item.filesize}</td>
       <td>{item.media_type}</td>
+      <td>
+        <Link to="/single" state={{ item }}>
+          Show
+        </Link>
+      </td>
     </tr>
   );
 };

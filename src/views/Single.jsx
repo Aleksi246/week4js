@@ -1,6 +1,11 @@
-const SingleView = (props) => {
-  const { item, setSelectedItem } = props;
+import { useLocation } from "react-router";
+import { useNavigate } from "react-router";
 
+const Single = () => {
+  const { state } = useLocation();
+  const item = state?.item;
+
+  const navigate = useNavigate();
   let mediaContent = null;
 
   if (item) {
@@ -24,10 +29,10 @@ const SingleView = (props) => {
 
   return (
     <dialog open={!!item}>
-      <button onClick={() => setSelectedItem(null)}>close</button>
       {mediaContent}
       {titled}
+      <button onClick={() => navigate(-1)}>Go back</button>
     </dialog>
   );
 };
-export default SingleView;
+export default Single;
