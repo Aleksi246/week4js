@@ -47,6 +47,7 @@ const Home = () => {
           <tr>
             <th>Thumbnail</th>
             <th>Title</th>
+            <th>Username</th>
             <th>Description</th>
             <th>Created</th>
             <th>Size</th>
