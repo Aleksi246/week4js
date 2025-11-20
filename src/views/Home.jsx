@@ -14,11 +14,26 @@ const Home = () => {
   const [mediaArray, setMediaArray] = useState([]);
 
   useEffect(() => {
-const getMedia = async () => {
-   const json = await fetchData('../public/test.json');
-   setMediaArray(json);
-};
-getMedia();
+    try{
+    const getMedia = async () => {
+
+      const mediaData = await fetchData(import.meta.env.VITE_MEDIA_API + '/media');
+
+      const newArray = await Promise.all(mediaData.map(async (item) => {
+      const result = await fetchData(import.meta.env.VITE_AUTH_API +'/users/' + item.user_id);
+      //combine the result/userdata to mediaData/json item
+
+      return {...item,username: result.username};
+      }),
+    );
+      console.log(newArray)
+      setMediaArray(newArray);
+    };
+    getMedia();
+    }catch(error){
+      console.log('ERROR',error)
+    }
+
 },[]);
 
   return (

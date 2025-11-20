@@ -23,6 +23,7 @@ const Single = () => {
       <>
         <p>{item.title}</p>
         <p>{item.description}</p>
+        <p>{item.username}</p>
       </>
     );
   }
