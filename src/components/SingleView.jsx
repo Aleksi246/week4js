@@ -1,33 +1,12 @@
 const SingleView = (props) => {
-  const { item, setSelectedItem } = props;
-
-  let mediaContent = null;
-
-  if (item) {
-    if (item.media_type.startsWith("image")) {
-      mediaContent = <img src={item.filename} alt={item.title} />;
-    } else if (item.media_type.startsWith("video")) {
-      mediaContent = <video src={item.filename} controls />;
-    }
-  }
-
-  let titled = null;
-
-  if (item) {
-    titled = (
-      <>
-        <p>{item.title}</p>
-        <p>{item.description}</p>
-      </>
+    const {item, setSelectedItem} = props;
+    return ( 
+        // TODO: Add JSX for displaying a mediafile here
+        // - use e.g. a <dialog> element for creating a modal
+        // - use item prop to render the media item details
+        // - use img tag for displaying images
+        // - use video tag for displaying videos
+        
     );
-  }
-
-  return (
-    <dialog open={!!item}>
-      <button onClick={() => setSelectedItem(null)}>close</button>
-      {mediaContent}
-      {titled}
-    </dialog>
-  );
 };
 export default SingleView;
