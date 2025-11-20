@@ -17,4 +17,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ##
 
-Open [https://users.metropolia.fi/~aleklap/routing/](https://users.metropolia.fi/~your-username/wsk-routing/) to view it in the browser.
+Open [https://users.metropolia.fi/~aleklap/hooks/](https://users.metropolia.fi/~your-username/wsk-routing/) to view it in the browser.
