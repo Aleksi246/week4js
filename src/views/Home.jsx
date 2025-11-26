@@ -1,12 +1,7 @@
 //import { useState } from "react";
 import MediaRow from "../components/MediaRow";
 import Single from "../views/Single";
-import { useMedia } from "../hooks/apiHooks";
-
-
-
-
-
+import { useMedia, useAuthentication } from "../hooks/apiHooks";
 
 const Home = () => {
   //const [selectedItem, setSelectedItem] = useState(null);
