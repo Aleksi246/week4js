@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <div>
       <nav>
-        <ul>
+        <ul className="flex *:p-3 *:hover:bg-amber-900">
           <li>
             <Link to="/">Home</Link>
           </li>
